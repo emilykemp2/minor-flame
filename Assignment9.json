@@ -1,0 +1,146 @@
+// JSON Document
+
+[
+	
+{
+	"title": "Hotel California",
+	"artist": "Eagles",
+	"genres": ["Rock"],
+	"year": "1976"
+	
+},
+	
+{
+	"title": "Bohemian Rhapsody",
+	"artist": "Queen",
+	"genres": ["Rock"],
+	"year": "1975",
+},
+
+{
+	"title": "Everybody Wants to Rule the World",
+	"artist": "Tears for Fears",
+	"genres": ["Rock"],
+	"year": "1985",
+},
+
+{
+	"title": "I Won't Back Down",
+	"artist": "Tom Petty",
+	"genres": ["Rock"],
+	"year": "1989",
+},
+
+{
+	"title": "Dancing Queen",
+	"artist": "ABBA",
+	"genres": ["Pop"],
+	"year": "1976",
+},
+
+{
+	"title": "Sweet Caroline",
+	"artist": "Neil Diamond",
+	"genres": ["Pop", "Rock"],
+	"year": "1969",
+},
+	
+{
+	"title": "Toxic",
+	"artist": "Britney Spears",
+	"genres": ["Pop"],
+	"year": "2003",
+},
+	
+{
+	"title": "Man in the Mirror",
+	"artist": "Michael Jackson",
+	"genres": ["Pop"],
+	"year": "1988",
+},
+	
+{
+	"title": "Austin",
+	"artist": "Blake Shelton",
+	"genres": ["Country"],
+	"year": "2001",
+},
+	
+{
+	"title": "Dirt on My Boots",
+	"artist": "Jon Pardi",
+	"genres": ["Country"],
+	"year": "2016",
+},
+	
+{
+	"title": "Tennessee Whiskey",
+	"artist": "Chris Stapleton",
+	"genres": ["Country"],
+	"year": "2015",
+},
+	
+{
+	"title": "Before He Cheats",
+	"artist": "Carrie Underwood",
+	"genres": ["Country"],
+	"year": "2005",
+},
+	
+{
+	"title": "Talk Too Much",
+	"artist": "Coin",
+	"genres": ["Alternative"],
+	"year": "2017",
+},
+	
+{
+	"title": "Doses & Mimosas",
+	"artist": "Cherub",
+	"genres": ["Alternative"],
+	"year": "2012",
+},
+	
+{
+	"title": "Pluto Projector",
+	"artist": "Rex Orange County",
+	"genres": ["Alternative"],
+	"year": "2019",
+},
+
+{
+	"title": "Bloody Valentine",
+	"artist": "Machine Gun Kelly",
+	"genres": ["Alternative"],
+	"year": "2020",
+},
+	
+{
+	"title": "The Spins",
+	"artist": "Mac Miller",
+	"genres": ["Rap", "Hip-Hop"],
+	"year": "2012",
+},
+	
+{
+	"title": "Sugar",
+	"artist": "BROCKHAMPTON",
+	"genres": ["Rap"],
+	"year": "2019",
+},
+	
+{
+	"title": "IV. Sweatpants",
+	"artist": "Childish Gambino",
+	"genres": ["Rap", "Hip-Hop"],
+	"year": "2013",
+},
+	
+{
+	"title": "LUCY!",
+	"artist": "Jaden",
+	"genres": ["Rap", "Pop"],
+	"year": "2020",
+},
+	
+]
