@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON Assignment</title>
+	<style type="text/css">
+		h1, h2 {
+			font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+			background-color: #BFDBDD;
+			text-align: center;
+			margin: 0;
+			padding: 10px 0;
+			font-size: 30pt;
+		}
+		
+		#data {
+			text-align: center;
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		}
+		
+		form {
+			text-align: center;
+			padding: 10px 0;
+			font-size: 15pt;
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+		}
+		
+		#raw {
+			border: 1px solid;
+			padding: 10px;
+			border-color: #000000;
+		}
+		
+		#results {
+			text-align:center;
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+			background-color: #FFF3E1;
+			font-weight: bold;
+			color: #2A52A4;	
+			border: 1px solid;
+			padding: 0px;
+			border-color: #000000;
+		}
+	
+		select {
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+			font-size: 12pt;
+		}
+		
+		input[type=button] {
+			font-size: 12pt;
+			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+			background-color: #FFFFFF;
+			border: 1px solid;
+			border-color: #000000;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		input[type=button]:hover {
+			background-color: #EAEAEA;
+		}
+	
+	</style>
+	
+	<script>
+		function loadData(process) {
+			
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+
+			
+			request.open("GET", "https://emilykemp2.github.io/minor-flame/Assignment9.json", true);
+			console.log("2 - opened request file");
+			
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+				
+				if (request.readyState == 4 && request.status == 200) {
+				
+					var result = request.responseText;				
+					document.getElementById("raw").innerHTML = result;
+					
+					var songs = JSON.parse(result);
+					
+					if (process == "true") {
+						strHTML = "<ul style='list-style-type: none;'>";
+						songs.forEach(function(song) { 
+							strHTML += "<li>" + song.title + "<br /> " + 
+							"Artist: " + song.artist + "<br /> " + 
+							"Genre: " + song.genres + "<br /> "+
+							"Released " + song.year + "<br /> " + "<br /> " + "</li>";
+						}) 
+
+						strHTML += "</ul>";
+						document.getElementById("data").innerHTML = strHTML;  
+					}
+					else {
+						userGenre = document.forms[0].genres.value;
+			
+						genreList = "<ul style='list-style-type: none;'>";
+						songs.forEach(function(song) { 
+							if (song.genres[0] == userGenre || song.genres[1] == userGenre) {
+								genreList += "<li>" + song.title + "<br /> " + "</li>";
+							}
+						})
+						genreList += "</ul>";
+						document.getElementById("results").innerHTML = genreList;
+					}
+
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+				}
+			}
+			request.send();
+			console.log("4 - Request sent");
+		}
+				
+	</script>
+	
+	
+</head>
+
+<body onload="loadData('true')">
+	<h1>Set List</h1>
+	
+	<form>
+	<label name="genres">Select a Genre</label>
+	<select name="genres">
+		<option value="Rock">Rock</option>
+		<option value="Pop">Pop</option>
+		<option value="Country">Country</option>
+		<option value="Alternative">Alternative</option>
+		<option value="Rap">Rap</option>
+		<option value="Hip-Hop">Hip-Hop</option>
+	</select>
+	<input type="button" name="Filter" value="Filter" onClick="loadData()">
+	</form>
+	<div id="results"></div>
+	<div id="data">Loading...</div>
+	<h2>Raw Data</h2>
+	<div id="raw">&nbsp;</div>	
+	<br />
+	
+</body>
+</html>
