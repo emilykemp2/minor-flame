@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>API Fun</title>
+
+<!--
+<Files "*.json">
+  Header set Access-Control-Allow-Origin "*"
+</Files>
+-->
+
+<script>
+		function loadData() {
+			
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+
+			
+			request.open("GET", "https://www.fruityvice.com/api/fruit/banana", true);
+			console.log("2 - opened request file");
+			
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+				alert(request.status);
+				
+				if (request.readyState == 4 && request.status == 200) {
+					
+					var result = request.responseText;				
+					document.getElementById("raw").innerHTML = result;
+					
+					var fruits = JSON.parse(result);
+					
+//					if (process == "true") {
+//						strHTML = "<ul style='list-style-type: none;'>";
+//						songs.forEach(function(song) { 
+//							strHTML += "<li>" + song.title + "<br /> " + 
+//							"Artist: " + song.artist + "<br /> " + 
+//							"Genre: " + song.genres + "<br /> "+
+//							"Released " + song.year + "<br /> " + "<br /> " + "</li>";
+//						}) 
+//
+//						strHTML += "</ul>";
+//						document.getElementById("data").innerHTML = strHTML;  
+//					}
+//					else {
+//						userGenre = document.forms[0].genres.value;
+//			
+//						genreList = "<ul style='list-style-type: none;'>";
+//						songs.forEach(function(song) { 
+//							if (song.genres[0] == userGenre || song.genres[1] == userGenre) {
+//								genreList += "<li>" + song.title + "<br /> " + "</li>";
+//							}
+//						})
+//						genreList += "</ul>";
+//						document.getElementById("results").innerHTML = genreList;
+//					}
+
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+				}
+			}
+			request.send();
+			console.log("4 - Request sent");
+		}
+				
+	</script>
+	
+	
+</head>
+
+
+
+
+<body onload="loadData()">
+</body>
+</html>
