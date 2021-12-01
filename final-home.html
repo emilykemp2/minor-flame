@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<title>MAKE Dessert</title>
+	
+	
+<script>
+	function getdessert() {	
+		request = new XMLHttpRequest();
+		console.log("1 - request object created");
+
+		request.open("GET", "www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata", true);
+		console.log("2 - opened request file");
+			
+		request.onreadystatechange = function() {
+			console.log("3 - readystatechange event fired.");
+
+			if (request.readyState == 4 && request.status == 200) {
+				var result = request.responseText;				
+				var colors = JSON.parse(result);
+
+//				strHTML = "<ul style='list-style-type: none;'>";
+//					colors.forEach(function(color) { 
+//						strHTML += "Color Name: " + color.color_name + "<br /> " + 
+//						"ID: " + color.id + "<br /> " + 
+//						"UID: " + color.uid + "<br /> " + 
+//						"Hex Value: " + color.hex_value + "<br /> " + "<br /> ";
+//						document.getElementById("color-block").style.backgroundColor = color.hex_value;
+//					}) 
+//
+//				strHTML += "</ul>";
+
+				document.getElementById("data").innerHTML = strHTML; 
+
+			}
+			else if (request.readyState == 4 && request.status != 200) {
+				document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+			}
+		}
+			request.send();
+			console.log("4 - Request sent");
+		}
+				
+	</script>
+</head>
+
+<body onload="getdessert()">
+	<header>MAKE Dessert</header>
+	<div id="data">&nbsp;</div>		
+</body>
+</html>
