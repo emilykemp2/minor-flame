@@ -20,7 +20,9 @@
 			console.log("3 - readystatechange event fired.");
 
 			if (request.readyState == 4 && request.status == 200) {
-				var result = request.responseText;				
+				var result = request.responseText;	
+				document.getElementById("fav2").innerHTML = result;
+				
 				var recipes = JSON.parse(result);
  				
 				strHTML = "<ul style='list-style-type: none;'>";
