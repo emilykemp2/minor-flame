@@ -26,9 +26,9 @@
 				var recipes = JSON.parse(result);
  				
 				strHTML = "<ul style='list-style-type: none;'>";
-//						recipes.forEach(function(recipe) { 
-							strHTML += "Name: " + recipes.recipes.title;
-//						}) 
+						recipes.forEach(function(recipes) { 
+							strHTML += "Name: " + recipes.title;
+						}) 
 
 					strHTML += "</ul>";
 				
