@@ -23,7 +23,14 @@
 				var result = request.responseText;				
 				var recipes = JSON.parse(result);
  				
-				//here is where we need to get the important recipe stuff and assign it to a div
+				strHTML = "<ul style='list-style-type: none;'>";
+						recipes.forEach(function(recipe) { 
+							strHTML += "Name: " + recipe.title;
+						}) 
+
+					strHTML += "</ul>";
+				
+					document.getElementById("fav1").innerHTML = strHTML;
 
 			}
 			else if (request.readyState == 4 && request.status != 200) {
