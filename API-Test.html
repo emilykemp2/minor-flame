@@ -21,18 +21,28 @@
 
 			if (request.readyState == 4 && request.status == 200) {
 				var result = request.responseText;	
-				document.getElementById("fav2").innerHTML = result;
+//				document.getElementById("fav2").innerHTML = result;
 				
 				var data = JSON.parse(result);
  				
 				strHTML = "<ul style='list-style-type: none;'>";
-						newdata.forEach(function(data) { 
+				strHTML2 = "<ul style='list-style-type: none;'>";
+				strHTML3 = "<ul style='list-style-type: none;'>";
+//						data.forEach(function(data) { 
 							strHTML += "Name: " + data.recipes[0].title;
-						}) 
+							strHTML += "Name: " + data.recipes[0].readyInMinutes;
+							strHTML += "Name: " + data.recipes[0].servings;
+				
+							strHTML += "Name: " + data.recipes[1].title;
+//						}) 
 
 					strHTML += "</ul>";
 				
 					document.getElementById("fav1").innerHTML = strHTML;
+					document.getElementById("fav2").innerHTML = strHTML2;
+//					document.getElementById("fav3").innerHTML = strHTML3;
+
+				
 
 			}
 			else if (request.readyState == 4 && request.status != 200) {
