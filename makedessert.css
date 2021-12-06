@@ -103,9 +103,5 @@ h2 {
 	border: solid thin #5dad9a;
 	filter: drop-shadow(8px 14px 35px #c6c6c6);
 	margin: 10px;
-	font-family: "Varela Round", sans-serif;
-}
-
-ul {
-	font-family: "Varela Round", sans-serif;
+	text-align: center;
 }

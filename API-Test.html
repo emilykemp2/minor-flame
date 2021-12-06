@@ -29,17 +29,18 @@
 				strHTML2 = "<ul style='list-style-type: none;'>";
 				strHTML3 = "<ul style='list-style-type: none;'>";
 //						data.forEach(function(data) { 
-							strHTML += "Name: " + data.recipes[0].title;
-							strHTML += "Name: " + data.recipes[0].readyInMinutes;
-							strHTML += "Name: " + data.recipes[0].servings;
+//					for (int i = 0; i < 4; i++) {
+							strHTML += data.recipes[0].title + "<br/>";
+							strHTML += "Total Time: " + data.recipes[0].readyInMinutes + "<br/>";
+							strHTML += "Servings: " + data.recipes[0].servings;
 				
-							strHTML2 += "Name: " + data.recipes[1].title;
+							strHTML2 += data.recipes[1].title + "<br/>";;
 //						}) 
-
+//					}
 					strHTML += "</ul>";
 				
-					document.getElementById("fav1").innerHTML = strHTML;
-					document.getElementById("fav2").innerHTML = strHTML2;
+					document.getElementById("rec1").innerHTML = strHTML;
+					document.getElementById("rec2").innerHTML = strHTML2;
 //					document.getElementById("fav3").innerHTML = strHTML3;
 
 				
