@@ -23,11 +23,11 @@
 				var result = request.responseText;	
 				document.getElementById("fav2").innerHTML = result;
 				
-				var recipes = JSON.parse(result);
+				var data = JSON.parse(result);
  				
 				strHTML = "<ul style='list-style-type: none;'>";
 //						newdata.forEach(function(recipes) { 
-							strHTML += "Name: " + recipes.recipes;
+							strHTML += "Name: " + data.recipes.title;
 //						}) 
 
 					strHTML += "</ul>";
