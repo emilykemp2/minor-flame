@@ -2,9 +2,9 @@
   "name": "sample",
   "version": "1.0.0",
   "description": "my sample node app",
-  "main": "sample.js",
+  "main": "helloapp.js",
   "scripts": {
-  "start": "node sample.js"
+  "start": "node helloapp.js"
 },
   "repository": {
   "type": "git",
