@@ -2,7 +2,7 @@
   "name": "sample",
   "version": "1.0.0",
   "description": "my sample node app",
-  "main": "part2.html",
+  "main": "app2.js",
   "scripts": {
   "start": "node app2.js"
 },
@@ -15,5 +15,5 @@
   "bugs": {
   "url": ""
 },
-  "homepage": ""
+  "homepage": "par2.html"
 }
