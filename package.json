@@ -2,7 +2,7 @@
   "name": "sample",
   "version": "1.0.0",
   "description": "my sample node app",
-  "main": "app2.js",
+  "main": "part2.html",
   "scripts": {
   "start": "node app2.js"
 },
